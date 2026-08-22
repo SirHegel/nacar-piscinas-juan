@@ -1,0 +1,30 @@
+{
+  "name": "nacar-piscinas-juan",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "setup": "node scripts/setup-admin.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build",
+    "scan:secrets": "npx --yes @secretlint/quick-start@13.0.4 \"**/*\"",
+    "audit:security": "npm audit --omit=dev --audit-level=high"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.8.0",
+    "next": "16.3.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}
