@@ -72,7 +72,7 @@ npm run scan:secrets
 npm run audit:security
 ```
 
-GitHub Actions repite estas comprobaciones en cada cambio y Dependabot revisa dependencias de npm y acciones. Los tipos de Node permanecen en el mismo major que el runtime; una subida mayor se hará junto con el cambio explícito del contrato de ejecución. Consulta [SECURITY.md](SECURITY.md) antes de desplegar o compartir una instalación.
+GitHub Actions repite estas comprobaciones en cada cambio y Dependabot revisa dependencias de npm y acciones. Las propuestas *major* de tipos de Node permanecen visibles —incluidos posibles avisos de seguridad—, pero sólo se fusionan junto con un cambio explícito y validado del contrato de ejecución. Consulta [SECURITY.md](SECURITY.md) antes de desplegar o compartir una instalación.
 
 ## Identidad
 
