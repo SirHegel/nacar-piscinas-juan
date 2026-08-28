@@ -10,6 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "node --test pruebas/*.test.ts",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck && npm run build",
     "scan:secrets": "npx --yes @secretlint/quick-start@13.0.4 \"**/*\"",
