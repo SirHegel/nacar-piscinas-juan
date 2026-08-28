@@ -6,6 +6,8 @@ Landing premium para presentar y vender proyectos de tratamiento mineral con mag
 
 El repositorio se entrega sin usuario, contraseña, hash, secreto de sesión, token de almacenamiento ni datos de prospectos. Tampoco existe una cuenta predeterminada.
 
+Requiere Node.js 24 o posterior. El archivo `.nvmrc` fija la misma línea que CI, los tipos de Node y el despliegue; npm rechaza versiones anteriores para no ejecutar una combinación que el proyecto no valida.
+
 ```bash
 npm ci
 cp .env.example .env.local
@@ -70,7 +72,7 @@ npm run scan:secrets
 npm run audit:security
 ```
 
-GitHub Actions repite estas comprobaciones en cada cambio y Dependabot revisa dependencias de npm y acciones. Consulta [SECURITY.md](SECURITY.md) antes de desplegar o compartir una instalación.
+GitHub Actions repite estas comprobaciones en cada cambio y Dependabot revisa dependencias de npm y acciones. Los tipos de Node permanecen en el mismo major que el runtime; una subida mayor se hará junto con el cambio explícito del contrato de ejecución. Consulta [SECURITY.md](SECURITY.md) antes de desplegar o compartir una instalación.
 
 ## Identidad
 
