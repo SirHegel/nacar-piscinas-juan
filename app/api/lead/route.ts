@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSiteContent } from "@/lib/cms";
 import { createLead, getLead } from "@/lib/leads";
+import { resolveLeadWebhookUrl } from "@/lib/lead-webhook";
 
 export const runtime = "nodejs";
 
@@ -81,13 +82,14 @@ function isRateLimited(ip: string) {
 }
 
 async function sendToWebhook(lead: Lead, reference: string) {
-  const url = process.env.LEAD_WEBHOOK_URL;
+  const url = resolveLeadWebhookUrl(process.env.LEAD_WEBHOOK_URL);
   if (!url) return false;
   const response = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ source: "nacar-web", reference, lead, receivedAt: new Date().toISOString() }),
     signal: AbortSignal.timeout(8_000),
+    redirect: "error",
   });
   if (!response.ok) throw new Error(`Webhook error ${response.status}`);
   return true;

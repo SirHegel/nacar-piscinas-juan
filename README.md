@@ -58,12 +58,13 @@ Los contenidos y prospectos se guardan como JSON privado en Vercel Blob. Los pro
 
 El formulario valida, evita duplicados por reintento, genera una referencia y guarda cada solicitud en la bandeja privada. El WhatsApp y el correo comercial se configuran desde “Marca y contacto” dentro del panel; el número debe usar formato internacional sin `+`, espacios ni guiones.
 
-`LEAD_WEBHOOK_URL` permite enviar además cada solicitud a un webhook. Como alternativa, `RESEND_API_KEY`, `LEADS_TO_EMAIL` y `LEADS_FROM_EMAIL` habilitan avisos por correo. Sin esas variables opcionales, las solicitudes siguen guardadas en el CRM privado.
+`LEAD_WEBHOOK_URL` permite enviar además cada solicitud a un webhook HTTPS de Zapier (`hooks.zapier.com/hooks/catch/...`) o Make (`hook.eu1.make.com`, `hook.eu2.make.com`, `hook.us1.make.com` y `hook.us2.make.com`). El servidor reconstruye el destino sobre esos orígenes fijos, valida los tokens y no sigue redirecciones; no se admiten hosts privados, puertos, credenciales, consultas ni fragmentos. Como alternativa, `RESEND_API_KEY`, `LEADS_TO_EMAIL` y `LEADS_FROM_EMAIL` habilitan avisos por correo. Sin esas variables opcionales, las solicitudes siguen guardadas en el CRM privado.
 
 ## Verificación
 
 ```bash
 npm run typecheck
+npm test
 npm run build
 npm run scan:secrets
 npm run audit:security
