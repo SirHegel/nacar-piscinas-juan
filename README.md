@@ -6,7 +6,7 @@ Landing premium para presentar y vender proyectos de tratamiento mineral con mag
 
 El repositorio se entrega sin usuario, contraseña, hash, secreto de sesión, token de almacenamiento ni datos de prospectos. Tampoco existe una cuenta predeterminada.
 
-Requiere Node.js 24 o posterior. El archivo `.nvmrc` fija la misma línea que CI, los tipos de Node y el despliegue; npm rechaza versiones anteriores para no ejecutar una combinación que el proyecto no valida.
+Requiere Node.js 24 o posterior. El archivo `.nvmrc` fija la misma línea que CI, los tipos de Node y el despliegue; el `.npmrc` versionado sólo activa `engine-strict`, de modo que npm rechaza versiones anteriores incluso si se omiten scripts. Las credenciales de registros privados deben guardarse en la configuración personal de npm, nunca en este repositorio.
 
 ```bash
 npm ci

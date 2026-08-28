@@ -32,7 +32,8 @@ next-env.d.ts
 *.p12
 *.pfx
 *.jks
-.npmrc
+# The project .npmrc is intentionally tracked with engine policy only.
+# Registry credentials belong in the user's npm configuration, never here.
 .netrc
 *credentials*.json
 *.log
