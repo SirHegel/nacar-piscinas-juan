@@ -2,6 +2,12 @@
 
 Landing premium para presentar y vender proyectos de tratamiento mineral con magnesio para piscinas. Incluye sitio público, formulario de diagnóstico, CMS privado y bandeja de prospectos.
 
+## Estado del alojamiento
+
+El proyecto web de Vercel se retiró el **20 de septiembre de 2026**. El código y su historial permanecen en este repositorio, incluidos los despliegues antiguos recuperados mediante etiquetas de archivo. El contenido público del CMS coincide con `defaultSiteContent` de `lib/cms.ts`, salvo la fecha de actualización.
+
+Se conservaron respaldos privados de configuración y de los cuatro documentos del CMS. El almacén privado de Blob sigue pendiente de eliminación manual porque la CLI exige intervención del propietario; el sitio web ya está retirado. Consulta [la verificación de conservación](docs/CONSERVACION-VERCEL-2026-09-20.md). Las instrucciones siguientes sirven para una instalación nueva con credenciales propias.
+
 ## Primer arranque seguro
 
 El repositorio se entrega sin usuario, contraseña, hash, secreto de sesión, token de almacenamiento ni datos de prospectos. Tampoco existe una cuenta predeterminada.
